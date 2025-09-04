@@ -1,0 +1,53 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // Directory Configuration
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Module System
+    // See also https://aka.ms/tsconfig/module
+    // with "nodenext", TypeScript decide module type from package.json
+    // if "type": "module" is missing Node.js/TypeScript decide CommonJS.
+    "module": "nodenext",
+    "target": "esnext",
+
+    // Library Configuration
+    "lib": ["esnext"],
+    "types": ["node"],
+
+    // Output Configuration
+    "sourceMap": true,
+    "declaration": true, // generate .d.ts files
+    "declarationMap": true, // source maps per .d.ts
+
+    // Module Resolution
+    "moduleResolution": "NodeNext", // if module is 'nodenext'
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+
+    // Strict Type Checking
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Advanced Options
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+
+    // Style Options
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+  },
+    // Include/Exclude
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
+}
