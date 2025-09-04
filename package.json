@@ -4,18 +4,22 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "packageManager": "yarn@4.9.4",
-
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",
-    "test": "jest"
+    "test": "node --experimental-vm-modules $(yarn bin jest)",
+    "pack": "yarn pack",
+    "pack:release": "yarn pack --filename $(node -p \"require('./package.json').name\")-v$(node -p \"require('./package.json').version\").tgz"
   },
-
   "dependencies": {
     "@types/node": "^24.3.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },
-
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.1.3",
+    "ts-jest": "^29.4.1"
+  }
 }
